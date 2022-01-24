@@ -23,10 +23,14 @@ class Deque:
         return self.front.data
 
     def push_back(self, data):
+        if self.front == None and self.back == None:
+            self.front = self.back = DequeElem(data)
         elem = DequeElem(data, prev_elem=self.back)
         self.back = elem
 
     def push_front(self, data):
+        if self.front == None and self.back == None:
+            self.front = self.back = DequeElem(data)
         elem = DequeElem(data, next_elem=self.front)
         self.front = elem
 
