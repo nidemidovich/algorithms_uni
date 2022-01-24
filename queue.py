@@ -14,16 +14,25 @@ class Queue:
 
     def push(self, data):
         elem = QueueElement(data)
-        if self.front and self.back is None:
+        if self.front == None and self.back == None:
             self.front = self.back = elem
         else:
             self.back.next_elem = elem
             elem.prev_elem = self.back
             self.back = elem
 
-    def pop(self):
+    def pop(self) -> QueueElement:
         if self.front is None:
             return None
         elem = self.front
         self.front = elem.next_elem
         return elem
+
+    @property
+    def size(self):
+        size = 0
+        current = self.front
+        while current != None:
+            size += 1
+            current = current.next_elem
+        return size
