@@ -27,12 +27,3 @@ class Queue:
         elem = self.front
         self.front = elem.next_elem
         return elem
-
-    @property
-    def size(self):
-        size = 0
-        current = self.front
-        while current != None:
-            size += 1
-            current = current.next_elem
-        return size

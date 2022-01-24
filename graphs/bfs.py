@@ -10,8 +10,10 @@ def bfs(v, adj, start_vertex):
     for u in adj[start_vertex]:
         q.push(u)
     
-    while q.size > 0:
+    while True:
         current = q.pop()
+        if current == None:
+            break
         if current.data.visited:
             continue
         else:
