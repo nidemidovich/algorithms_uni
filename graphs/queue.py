@@ -22,7 +22,7 @@ class Queue:
             self.back = elem
 
     def pop(self) -> QueueElement:
-        if self.front is None:
+        if self.front == None:
             return None
         elem = self.front
         self.front = elem.next_elem
