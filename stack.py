@@ -11,7 +11,7 @@ class StackClassic:
         self.top = None
 
     def view(self):
-        if self.top is None:
+        if self.top == None:
             return None
         return self.top.data
 
@@ -20,14 +20,14 @@ class StackClassic:
         self.top = elem
 
     def pop(self):
-        if self.top is None:
+        if self.top == None:
             return None
         elem = self.top
-        self.top = elem.prevelem
+        self.top = elem.prev
         return elem.data
 
     def show(self):
         elem = self.top
-        while elem is not None:
+        while elem != None:
             print(elem.data)
-            elem = elem.prevelem
+            elem = elem.prev

@@ -10,7 +10,7 @@ def bfs(v, adj, start_vertex):
     for u in adj[start_vertex]:
         q.push(u)
     
-    while (q.size > 0):
+    while q.size > 0:
         current = q.pop()
         if current.data.visited:
             continue
@@ -26,21 +26,21 @@ if __name__ == '__main__':
     v = [V(0, 9), V(1, 2), V(2, 16), V(3, 5), V(4, 15), V(5, 10), V(6, 7), V(7, 11)]
     adj = [
         # 1st vertex
-        [v[1], v[2], v[3]],
+        [v[1], v[3], v[6]],
         # 2nd vertex
-        [v[0], v[2], v[4], v[5]],
+        [v[0], v[2]],
         # 3rd vertex
-        [v[0], v[1], v[3], v[5], v[6]],
-        # 4th vertex
-        [v[0], v[2], v[7]],
-        # 5th vertex
         [v[1], v[5]],
+        # 4th vertex
+        [v[0], v[4]],
+        # 5th vertex
+        [v[3], v[5]],
         # 6th vertex
-        [v[1], v[2], v[4], v[6]],
+        [v[2], v[4], v[7]],
         # 7th vertex
-        [v[2], v[5], v[7]],
+        [v[0], v[7]],
         # 8th vertex
-        [v[3], v[7]]
+        [v[6], v[5]]
     ]
 
     bfs(v, adj, 0)
